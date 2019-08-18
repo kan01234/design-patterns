@@ -6,7 +6,7 @@ facade object define a higher-level interface that makes subsystem easier to use
 
 class diagram:
 
-![facade pattern](https://github.com/kan01234/design-pattern/blob/master/facade-pattern/facade-pattern.png)
+![facade pattern](https://github.com/kan01234/design-patterns/blob/master/facade-pattern/facade-pattern.png)
 
 1. Class1, Class2, Class3 are sub system code
 2. Facade is object define higher-level function by calling sub system code
@@ -60,7 +60,7 @@ Assume we are need to serve a breakfast with egg, bacon and english muffin, and 
 
 class diagram:
 
-![facade-pattern-example](https://github.com/kan01234/design-pattern/blob/master/facade-pattern/facade-pattern-example.png)
+![facade-pattern-example](https://github.com/kan01234/design-patterns/blob/master/facade-pattern/facade-pattern-example.png)
 
 1. BreakfastFacade is facade object
 2. Egg, Bacon, EnglishMuffin are sub system code

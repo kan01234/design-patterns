@@ -6,7 +6,7 @@ allows behavior to be added to an individual object, dynamically, without affect
 
 class diagram:
 
-![decorator pattern](https://github.com/kan01234/design-pattern/blob/master/decorator-pattern/decorator-pattern.png)
+![decorator pattern](https://github.com/kan01234/design-patterns/blob/master/decorator-pattern/decorator-pattern.png)
 
 - Component
   - interface of target component
@@ -25,7 +25,7 @@ Assume we are going to make Hamburger, each Hamburger need to have few Ingredien
 
 class diagram:
 
-![decorator pattern example](https://github.com/kan01234/design-pattern/blob/master/decorator-pattern/decorator-pattern-example.png)
+![decorator pattern example](https://github.com/kan01234/design-patterns/blob/master/decorator-pattern/decorator-pattern-example.png)
 
 
 - Hamburger is Component
