@@ -6,7 +6,7 @@ Without violating encapsulation, capture and externalize an object's internal st
 
 class diagram:
 
-![memento pattern](https://github.com/kan01234/design-patterns/blob/master/design-patterns/memento-pattern.png)
+![memento pattern](https://github.com/kan01234/design-patterns/blob/master/memento-pattern/memento-pattern.png)
 
 there are 3 objects:
 
@@ -31,7 +31,7 @@ Assume we are playing RPG game, we have a player and make save and load process
 
 class diagram:
 
-![memento pattern example](https://github.com/kan01234/design-patterns/blob/master/design-patterns/memento-pattern-example.png)
+![memento pattern example](https://github.com/kan01234/design-patterns/blob/master/memento-pattern/memento-pattern-example.png)
 
 1. Player is originator
 2. Save is memento

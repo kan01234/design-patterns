@@ -6,7 +6,7 @@ creating new object by clone a object.
 
 class diagram:
 
-![prototype pattern](https://github.com/kan01234/design-patterns/blob/master/design-patterns/prototype-pattern.png)
+![prototype pattern](https://github.com/kan01234/design-patterns/blob/master/prototype-pattern/prototype-pattern.png)
 
 - Prototype
     - prototype of object
@@ -23,7 +23,7 @@ avoid the inherent cost of creating a new object in the standard way, for exampl
 ## Example
 Assume we have two type of Animal, but it need so many time to wait for Animal grow up, so it would be better if we can clone a Animal instead of new another one.
 
-![prototype pattern example](https://github.com/kan01234/design-patterns/blob/master/design-patterns/prototype-pattern-example.png))
+![prototype pattern example](https://github.com/kan01234/design-patterns/blob/master/prototype-pattern/prototype-pattern-example.png))
 
 - Animal, is Prototype
 - Sheep, Pig are ConcretePrototype

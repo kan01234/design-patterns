@@ -14,7 +14,7 @@ Project of eample of template method pattern implement by Java.
 
 class diagram:
 
-![templat method pattern](https://github.com/kan01234/design-patternsblob/master/template-method-pattern/template-method-pattern.png)
+![templat method pattern](https://github.com/kan01234/design-patterns/blob/master/template-method-pattern/template-method-pattern.png)
 
 ## Example
 Assume there are 3 type of Pizza, and the steps to make the Pizza is shown below:
@@ -31,7 +31,7 @@ Assume there are 3 type of Pizza, and the steps to make the Pizza is shown below
 
 class diagram:
 
-![templat method pattern example](https://github.com/kan01234/design-patternsblob/master/template-method-pattern/template-method-pattern-example.png)
+![templat method pattern example](https://github.com/kan01234/design-patterns/blob/master/template-method-pattern/template-method-pattern-example.png)
 
 - Pizza is the abstract class
     - makePizza is the tempalte method
