@@ -49,3 +49,7 @@ Project of eample of design patterns implement by Java.
 [Template Method](https://github.com/kan01234/design-patterns/tree/master/template-method-pattern)
 
 [Visitor](https://github.com/kan01234/design-patterns/tree/master/visitor-pattern)
+
+#### TODO
+[] Command pattern
+[] review old readme
