@@ -30,7 +30,7 @@ Project of eample of design patterns implement by Java.
 ## Behavioural Patterns
 [Chain of Responsibility](https://github.com/kan01234/design-patterns/tree/master/chain-of-responsibility-pattern)
 
-[Command]()
+[Command](https://github.com/kan01234/design-patterns/tree/master/command-pattern)
 
 [Interpreter](https://github.com/kan01234/design-patterns/tree/master/interpreter-pattern)
 
@@ -51,5 +51,5 @@ Project of eample of design patterns implement by Java.
 [Visitor](https://github.com/kan01234/design-patterns/tree/master/visitor-pattern)
 
 #### TODO
-[] Command pattern
-[] review old readme
+[ ] Command pattern
+[ ] review old readme
