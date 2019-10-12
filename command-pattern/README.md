@@ -59,6 +59,7 @@ public class ConcreteCommand implements Command {
 assume we have a fan and allow user to turn of and off the fan by the remote.
 
 class diagram:
+
 ![command-pattern](https://github.com/kan01234/design-patterns/blob/master/command-pattern/command-pattern.png)
 
 Fan is the Receiver, have turn on/off method
@@ -180,4 +181,110 @@ assertFalse(fan.isPowerOn());
 output
 ```
 turn off the fan
+```
+
+## Example (with Java 8)
+Continue from above case
+
+class diagram:
+
+![command-pattern example 2](https://github.com/kan01234/design-patterns/blob/master/command-pattern/command-pattern-example-2.png)
+
+do not need to create TurnOnCommand, TurnOffCommand, use :: operator to replace it
+
+```java
+Fan fan = new Fan();
+FanRemote fanRemote = new FanRemote();
+fanRemote.set(0, fan::turnOn);
+fanRemote.set(1, fan::turnOff);
+fanRemote.execute(0);
+assertTrue(fan.isPowerOn());
+fanRemote.execute(1);
+assertFalse(fan.isPowerOn());
+```
+
+## Example (undo)
+Continue from above case, but the remote can perform a undo last action now.
+
+![command-pattern example 2](https://github.com/kan01234/design-patterns/blob/master/command-pattern/command-pattern-example-3.png)
+
+add undo method to Command Interface
+```java
+public interface Command {
+    public void execute();
+    public void undo();
+}
+```
+
+implement undo method in TurnOffCommand
+```java
+public class TurnOffCommand implements Command {
+
+    //other methods ...
+
+    @Override
+    public void undo() {
+       fan.turnOn();
+    }
+
+}
+```
+
+implement undo method in TurnOnCommand
+```java
+public class TurnOffCommand implements Command {
+
+    //other methods ...
+
+    @Override
+    public void undo() {
+       fan.turnOff();
+    }
+
+}
+```
+
+add undo method and store last executed command in the remote
+```java
+
+public class FanRemote {
+    
+    private Command lastCommand;
+
+    // other methods...
+
+    public void execute(int i) {
+        commands[i].execute();
+        lastCommand = commands[i];
+    }
+
+    public void undo() {
+        lastCommand.undo();
+    }
+
+}
+```
+
+testing code
+```java
+public void test3() {
+        Fan fan = new Fan();
+        FanRemote fanRemote = new FanRemote();
+        TurnOnCommand turnOnCommand = new TurnOnCommand(fan);
+        TurnOffCommand turnOffCommand = new TurnOffCommand(fan);
+        fanRemote.set(0, turnOnCommand);
+        fanRemote.set(1, turnOffCommand);
+        fanRemote.execute(0);
+        fanRemote.undo();
+        fanRemote.execute(1);
+        fanRemote.undo();
+    }
+```
+
+output
+```
+turn on the fan
+turn off the fan
+turn off the fan
+turn on the fan
 ```
