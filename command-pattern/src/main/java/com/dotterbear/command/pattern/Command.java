@@ -2,6 +2,8 @@ package com.dotterbear.command.pattern;
 
 public interface Command {
 
-    void execute();
+    public void execute();
+
+    public void undo();
 
 }
