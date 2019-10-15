@@ -1,4 +1,4 @@
-package com.dotterbear.simple.factory.pattern;
+package com.dotterbear.simple.factory.pattern.pokemon;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package com.dotterbear.simple.factory.pattern;
+package com.dotterbear.simple.factory.pattern.pokemon;
 
 public abstract class Pokemon {
 
