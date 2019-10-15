@@ -1,27 +1,97 @@
-# Simple Factory Pattern
-Creational pattern that uses factory methods to create objects without specify which class object that will be created.
+# simple-factory-pattern
+Project of eample of simple factory pattern implement by Java. 
 
-From this points, a simple factory pattern will have 3 main roles shown as below:
+## What is simple factory pattern
+creational pattern that uses factory methods to create objects without specify which class object that will be created.
+
+class diagram:
+
+![simple-factory-pattern](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern.png)
+
+1. Product
+  - interface or abstract class that define Concrete Product
+
+2. ProductA, Product B
+  - concrete product need to create, classe that implement or extends product
+
+3. SimpleFactory
+  - class that have method to take parameter to create differents concrete product as needed
 
 ## When to use
 - all of potential classes are in same subclass hierarchy
 - centralize class creation
 - encapsulate object creation
 
-1. Product
-- should be interface or super class of Concrete Product
-
-2. Concrete Product
-- the object will be created by factory method
-
-3. Simple Factory
-- class to implement factory method to create Concrete Product]
-
 ## Example
+we have to create Hamburger by the order, and there are more type of hamburger will add later. Since we know there are more type of hamburger will add, so we seperate the create method to factory class.
+
+class diagram:
+
+![simple factory pattern example](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern-example.png)
+
+Hamburger, interface that define the product
+```java
+public interface Hamburger {
+    public void pack();
+    public boolean isVegetarian();
+}
+```
+
+BeefHamburger, class that implement Hamburger, one of concrete products
+```java
+public class BeefHamburger implements Hamburger {
+    @Override
+    public void pack() {
+        System.out.println("pack beef hamburger into paper box");
+    }
+    // other methods ....
+}
+```
+
+FakeMeatHamburger, class that implment Hamburger, one of concrete products
+```java
+public class FakeMeatHamburger implements Hamburger {
+    @Override
+    public void pack() {
+        System.out.println("pack fake meat hamburger with paper");
+    }
+    // other methods ....
+}
+```
+
+SimpleHamburgerFactory, class that used to create concrete product and maintains factory method
+```java
+public class SimpleHamburgerFactory {
+    public Hamburger makeHamburger(String order) {
+        switch (order) {
+            case "beef":
+                return new BeefHamburger();
+            case "fake meat":
+                return new FakeMeatHamburger();
+            default:
+                return null;
+        }
+    }
+}
+```
+And if there are more type of Hamburger are added, update the factory method
+
+Testing code
+```java
+public void test() {
+  SimpleHamburgerFactory hamburgerFactory = new SimpleHamburgerFactory();
+  Hamburger beefHamburger = hamburgerFactory.makeHamburger("beef");
+  Hamburger fakeMeatHamburger = hamburgerFactory.makeHamburger("fake meat");
+  assertTrue(beefHamburger instanceof BeefHamburger);
+  assertTrue(fakeMeatHamburger instanceof FakeMeatHamburger);
+}
+```
+
+## Example (Pokemon)
 Assume we need to create a Pokemon in run time or dynamically, and we are able to create Bulbasaur, Charmander and Squirtle.
 
 class diagram:
-![simple-factory-pattern](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern-example.png)
+![simple-factory-pattern](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern-pokemon-1.png)
 
 roles:
 
@@ -55,10 +125,13 @@ public static void main(String[] args) {
 }
 ```
 
-### To add a Concrete Product
+To add a Concrete Product
 Extend the above example, if we are going to add one more Pokemon Pikachu:
 
 class diagram:
-![simple-factory-pattern-2](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern-example-2.png)
+![simple-factory-pattern-2](https://github.com/kan01234/design-patterns/blob/master/simple-factory-pattern/simple-factory-pattern-pokemon-2.png)
 
-as you can see on the class diagram, it need to add Pikachu class that implemet the Pokemon and modify the factory method in the SimplePokemonFactory. Since, it need to make a change to the existing code, and it will break the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle). So that, we can't said Simple Factory Pattern is a robust design pattern, but it is still useful in small software system architure architecture.
+as you can see on the class diagram, it need to add Pikachu class that implemet the Pokemon and modify the factory method in the SimplePokemonFactory.
+
+### Cons
+Since, it need to make a change to the existing code, and it will break the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle). So that, we can't said Simple Factory Pattern is a robust design pattern, but it is still useful in small software system architure architecture.
