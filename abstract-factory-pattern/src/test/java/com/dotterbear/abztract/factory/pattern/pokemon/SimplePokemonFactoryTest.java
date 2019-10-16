@@ -1,4 +1,4 @@
-package com.dotterbear.abztract.factory.pattern;
+package com.dotterbear.abztract.factory.pattern.pokemon;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

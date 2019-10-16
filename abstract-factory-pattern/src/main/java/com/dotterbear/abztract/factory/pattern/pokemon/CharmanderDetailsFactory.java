@@ -1,4 +1,4 @@
-package com.dotterbear.abztract.factory.pattern;
+package com.dotterbear.abztract.factory.pattern.pokemon;
 
 public class CharmanderDetailsFactory implements PokemonDetailsFactory{
 
