@@ -58,14 +58,6 @@ facade.do();
 ## Example
 Assume we are need to serve a breakfast with egg, bacon and english muffin, and need to handle the food with difference step.
 
-class diagram:
-
-![facade-pattern-example](https://github.com/kan01234/design-patterns/blob/master/facade-pattern/facade-pattern-example.png)
-
-1. BreakfastFacade is facade object
-2. Egg, Bacon, EnglishMuffin are sub system code
-3. Test is Client
-
 for every breakfast, need to prepare like below step
 1. cut muffin
 2. hot muffin
@@ -74,12 +66,54 @@ for every breakfast, need to prepare like below step
 5. mix egg
 6. cook egg
 
-we have server() method in BreakfastFacade, and the client only need to call that method instead of call the others follow step by step
+class diagram:
+
+![facade-pattern-example](https://github.com/kan01234/design-patterns/blob/master/facade-pattern/facade-pattern-example.png)
+
+Bacon, Egg, EnglishMuffin reprsent to sub system
+
+Bacon
+```java
+public class Bacon {
+    public void cook() {
+        System.out.println("cook the bacon");
+    }
+}
+```
+
+Egg
+```java
+public class Egg {
+    public void open() {
+        System.out.println("open the eggs");
+    }
+    public void mix() {
+        System.out.println("mix the eggs");
+    }
+    public void cook() {
+        System.out.println("make scrambled eggs");
+    }
+}
+```
+
+EnglishMuffin
+```java
+public class EnglishMuffin {
+    public void cut() {
+        System.out.println("cut the muffin");
+    }
+    public void hot() {
+        System.out.println("hot the muffix");
+    }
+}
+```
+
+BreakfastFacade, use the serve method to execute all sub system method step by step
 ```java
 public class BreakfastFacade {
-
-    // other fields init
-
+    private Egg egg;
+    private Bacon bacon;
+    private EnglishMuffin englishMuffin;
     public void serve() {
         englishMuffin.cut();
         englishMuffin.hot();
@@ -88,8 +122,18 @@ public class BreakfastFacade {
         egg.mix();
         egg.cook();
     }
-
+    public BreakfastFacade() {
+        this.egg = new Egg();
+        this.bacon = new Bacon();
+        this.englishMuffin = new EnglishMuffin();
+    }
 }
+```
+
+Testing code
+```java
+BreakfastFacade breakfastFacade = new BreakfastFacade();
+breakfastFacade.serve();
 ```
 
 output:
