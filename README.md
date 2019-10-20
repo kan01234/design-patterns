@@ -51,5 +51,7 @@ Project of eample of design patterns implement by Java.
 [Visitor](https://github.com/kan01234/design-patterns/tree/master/visitor-pattern)
 
 #### TODO
-[ ] Command pattern
-[ ] review old readme
+[x] Command pattern
+[x] review simple factory pattern
+[x] review abstract factory pattern
+[x] review bridge pattern
