@@ -2,39 +2,45 @@ package com.dotterbear.builder.pattern;
 
 public class SmallDogBuilder implements AnimalBuilder {
 
-    private Animal dog;
+    private String name;
 
-    public SmallDogBuilder() {
-        dog = new Animal();
-    }
+    private double weight;
 
-    @Override
-    public AnimalBuilder buildName() {
-        dog.setName("Dolly");
-        return this;
-    }
+    private double height;
 
-    @Override
-    public AnimalBuilder buildWeight() {
-        dog.setWeight(20.0);
-        return this;
-    }
-
-    @Override
-    public AnimalBuilder buildHeight() {
-        dog.setHeight(40.0);
-        return this;
-    }
-
-    @Override
-    public AnimalBuilder buildGender() {
-        dog.setGender("F");
-        return this;
-    }
+    private String gender;
 
     @Override
     public Animal build() {
-        return dog;
+        return new Animal()
+                .setName(name)
+                .setWeight(weight)
+                .setHeight(height)
+                .setGender(gender);
+    }
+
+    @Override
+    public AnimalBuilder setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    @Override
+    public AnimalBuilder setWeight(double weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    @Override
+    public AnimalBuilder setHeight(double height) {
+        this.height = height;
+        return this;
+    }
+
+    @Override
+    public AnimalBuilder setGender(String gender) {
+        this.gender = gender;
+        return this;
     }
 
 }

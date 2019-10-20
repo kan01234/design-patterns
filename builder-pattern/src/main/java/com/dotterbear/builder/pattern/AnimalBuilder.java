@@ -2,13 +2,13 @@ package com.dotterbear.builder.pattern;
 
 public interface AnimalBuilder {
 
-    public AnimalBuilder buildName();
+    public AnimalBuilder setName(String name);
 
-    public AnimalBuilder buildWeight();
+    public AnimalBuilder setWeight(double weight);
 
-    public AnimalBuilder buildHeight();
+    public AnimalBuilder setHeight(double height);
 
-    public AnimalBuilder buildGender();
+    public AnimalBuilder setGender(String gender);
 
     public Animal build();
 

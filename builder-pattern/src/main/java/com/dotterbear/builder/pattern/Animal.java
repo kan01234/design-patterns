@@ -1,6 +1,6 @@
 package com.dotterbear.builder.pattern;
 
-public class Animal implements AnimalPlan {
+public class Animal {
 
     private String name;
 
@@ -14,32 +14,36 @@ public class Animal implements AnimalPlan {
         return name;
     }
 
-    public void setName(String name) {
+    public Animal setName(String name) {
         this.name = name;
+        return this;
     }
 
     public double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public Animal setWeight(double weight) {
         this.weight = weight;
+        return this;
     }
 
     public double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public Animal setHeight(double height) {
         this.height = height;
+        return this;
     }
 
     public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public Animal setGender(String gender) {
         this.gender = gender;
+        return this;
     }
 
     @Override

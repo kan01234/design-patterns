@@ -5,15 +5,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class PetEngineerTest {
+public class BuilderPatternTest {
 
     @Test
     public void test() {
         Animal pet;
         AnimalBuilder animalBuilder = new SmallDogBuilder();
-        PetEngineer petEngineer = new PetEngineer(animalBuilder);
-        petEngineer.constructAnimal();
-        pet = petEngineer.getAnimal();
+        String name = "Dolly";
+        double weight = 20.0;
+        double height = 40.0;
+        String gender = "F";
+        pet = animalBuilder.setGender(gender)
+                .setName(name)
+                .setHeight(height)
+                .setWeight(weight)
+                .build();
         System.out.println(pet);
         assertTrue(pet instanceof Animal);
         assertEquals("Dolly", pet.getName());
