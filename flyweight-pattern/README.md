@@ -11,10 +11,10 @@ class diagram;
 1. Flyweight
     - abstract class or interface for ConcreteFlyweight
 
-2. ConcreteFlyweight
+2. Concrete Flyweight
     - concrete prodcut of object, implment sharing state and data here
 
-3. FlyweightFactory
+3. Flyweight Factory
     - class that create and manage sharing flyweight here
 
 4. Client
@@ -30,12 +30,9 @@ class diagram:
 
 ![flyweight-pattern-example](https://github.com/kan01234/design-patterns/blob/master/flyweight-pattern/flyweight-pattern-example.png)
 
-1. MenuItem is Flyweight that define Food or Drink
-2. Food and Drink are ConcreteFlyweight, Food also have TAKE_AWAY value shared
 3. Menu is FlyweightFactory
-4. Test is Client
 
-MenuItem
+MenuItem represent to flyweight
 ```java
 public abstract class MenuItem {
 
@@ -53,7 +50,7 @@ public abstract class MenuItem {
 }
 ```
 
-Food
+Food represent to concrete flyweight
 
 have share internal data TAKE_AWAY
 ```java
@@ -73,7 +70,7 @@ public class Food extends MenuItem {
 }
 ```
 
-Menu
+Menu represent to flyweight factory
 
 have a map to store MenuItem, and create it if not found
 ```java
