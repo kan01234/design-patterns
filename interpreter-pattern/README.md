@@ -14,10 +14,10 @@ class diagram:
 2. Expression
     - interface to define interprete method
 
-3. TerminalExpression
+3. Terminal Expression
     - class that implement Expression, and unable to extract to smaller expression
 
-4. NonTerminalExpression
+4. Non Terminal Expression
     - class that implement Expression, and able to extract to smaller expression
 
 ## Example
@@ -30,7 +30,7 @@ class diagram:
 1. String is Context
 2. Expression is expression
 3. AddSlash and ToLowercase are TermainlExpression
-4. NonTerminalExpression
+4. ToLowercaseAndAddSlash is NonTerminalExpression
 
 Expression interface define interprete method
 ```java
