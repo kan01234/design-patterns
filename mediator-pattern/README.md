@@ -68,6 +68,58 @@ public abstract class Component {
 }
 ```
 
+abstract class Button extends Component
+```java
+public abstract class Button extends Component {
+    public abstract void press();
+}
+```
+
+BuyButton, implement function when BuyButton has been pressed
+```java
+public class BuyButton extends Button  {
+
+    @Override
+    public void press() {
+        componentMediator.buy();
+    }
+
+}
+```
+
+RefundButton, implement function when RefundButton has been pressed
+```java
+public class RefundButton extends Button {
+
+    @Override
+    public void press() {
+        componentMediator.refund();
+    }
+
+}
+```
+
+CoinSlot, for insert coin and hold coin state
+```java
+public class CoinSlot extends Component {
+
+    private boolean hasCoin = false;
+
+    public void insertCoin() {
+        hasCoin = true;
+    }
+
+    public boolean isHasCoin() {
+        return hasCoin;
+    }
+
+    public void setHasCoin(boolean hasCoin) {
+        this.hasCoin = hasCoin;
+    }
+
+}
+```
+
 ComponentMediator define the action needed
 ```java
 public interface ComponentMediator {
@@ -81,19 +133,7 @@ public interface ComponentMediator {
 }
 ```
 
-ConcreteComponent will execute action by mediator
-```java
-public class BuyButton extends Button  {
-
-    @Override
-    public void press() {
-        componentMediator.buy();
-    }
-
-}
-```
-
-Implementation of mediator
+AutoSellingMachineMediator is concrete mediator
 ```java
 public class AutoSellingMachineMediator implements ComponentMediator {
 
