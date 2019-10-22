@@ -11,13 +11,13 @@ class diagram:
 1. Aggregate
     - interface for create iterator
 
-2. ConcreteAggregate
+2. Concrete Aggregate
     - class that implements Aggregate, and implementation of collection of objects
 
 3. Iterator
     - interface for access elements
 
-4. ConcreteIterator
+4. Concrete Iterator
     - class that implments Iterator, and implementation to access the collecion of ConcreteAggregate
 
 ## Example
@@ -40,20 +40,83 @@ class diagram:
 
 ![iterator pattern](https://github.com/kan01234/design-patterns/blob/master/iterator-pattern/iterator-pattern-example.png)
 
-1. MenuItem
-    - object of concrete product
+MenuItem is concrete product
+```java
+public class MenuItem {
+    private String name;
+    private int price;
+    // getter, setter methods
+}
+```
 
-2. MenuIterator
-    - interface for menu iterator
+MenuIterator is iterator
+```java
+public interface MenuIterator {
+    public boolean hasNext();
+    public MenuItem next();
+}
+```
 
-3. FoodMenuIterator, DrinkMenuIterator
-    - concrete iterator impelement MenuInterator
+FoodMenuIterator is concrete iterator
+```java
+public class FoodMenuIterator implements MenuIterator {
 
-4. Menu
-    - aggregate of menu
+    private List<MenuItem> foods;
 
-5. FoodMenu, DrinkMenu
-    - concrete aggregate thant contains foods and drinks
+    private int cur;
+
+    public FoodMenuIterator(List<MenuItem> foods) {
+        this.foods = foods;
+        cur = 0;
+    }
+
+	@Override
+    public boolean hasNext() {
+        return foods != null && cur < foods.size();
+    }
+
+    @Override
+    public MenuItem next() {
+        return foods.get(cur++);
+    }
+
+}
+```
+
+DrinkMenuIterator is concrete iterator
+```java
+public class DrinkMenuIterator implements MenuIterator {
+
+    private MenuItem[] drinks;
+
+    private int cur;
+
+    public DrinkMenuIterator(MenuItem[] drinks) {
+        this.drinks = drinks;
+        cur = 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return drinks != null && cur < drinks.length;
+    }
+
+    @Override
+    public MenuItem next() {
+        return drinks[cur++];
+    }
+
+}
+```
+
+Menu is aggregate
+```java
+public interface Menu {
+
+    public MenuIterator createIterator();
+
+}
+```
 
 print foods and drink
 
