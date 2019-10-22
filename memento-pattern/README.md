@@ -33,9 +33,70 @@ class diagram:
 
 ![memento pattern example](https://github.com/kan01234/design-patterns/blob/master/memento-pattern/memento-pattern-example.png)
 
-1. Player is originator
-2. Save is memento
-3. Save is caretaker
+Player is originator
+```java
+public class Player {
+
+    private int hp;
+
+    private int mp;
+
+    private String state;
+
+    public Player(int hp, int mp, String state) {
+        this.hp = hp;
+        this.mp = mp;
+        this.state = state;
+    }
+    // getter, setter
+}
+```
+
+Save is memento
+```java
+public class Save {
+
+    private int hp;
+
+    private int mp;
+
+    private String state;
+
+    // getter, setter
+
+    public Save save() {
+        return new Save(hp, mp, state);
+    }
+
+    public void load(Save save) {
+        hp = save.getHp();
+        mp = save.getMp();
+        state = save.getState();
+    }
+}
+```
+
+SaveController is caretaker
+```java
+public class SaveController {
+
+    private static final int MAX_NUM_OF_SAVE = 3;
+
+    private Save[] saves = new Save[MAX_NUM_OF_SAVE];
+
+    public Save getSave(int index) {
+        return index < MAX_NUM_OF_SAVE ? saves[index] : null;
+    }
+
+    public boolean addSave(int index, Save save) {
+        if (index >= MAX_NUM_OF_SAVE)
+            return false;
+        saves[index] = save;
+        return true;
+    }
+
+}
+```
 
 create a new player with 100hp, 30mp, empty state and save to 0
 ```java
