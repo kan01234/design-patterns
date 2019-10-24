@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class PrototypePatternTest {
 
     @Test
-    public void AnimalTest() {
+    public void test() {
         Animal sheep = new Sheep();
         Animal sheepCopy = sheep.makeCopy();
         Animal pig = new Pig();
