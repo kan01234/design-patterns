@@ -8,14 +8,13 @@ class diagram:
 
 ![prototype pattern](https://github.com/kan01234/design-patterns/blob/master/prototype-pattern/prototype-pattern.png)
 
-- Prototype
-    - prototype of object
+1. Prototype
+    - interface of prototype
+    - have make copy method
 
-- ConcretePrototype
-    - subclass of prototype
-
-- Client
-    - use Prototype to clone object
+2. Concrete Prototype
+    - class that implment prototype
+    - implment make copy method
 
 ## When to use prototype pattern
 avoid the inherent cost of creating a new object in the standard way, for example new object need to fetch data from database
@@ -25,11 +24,18 @@ Assume we have two type of Animal, but it need so many time to wait for Animal g
 
 ![prototype pattern example](https://github.com/kan01234/design-patterns/blob/master/prototype-pattern/prototype-pattern-example.png))
 
-- Animal, is Prototype
-- Sheep, Pig are ConcretePrototype
-- Test, is Client
+Animal, prototype interface
 
-Sheep.java
+make it simple, just extends Cloneable class in Java
+```java
+public interface Animal extends Cloneable {
+
+    public Animal makeCopy();
+
+}
+```
+
+Sheep, Pig are ConcretePrototype
 ```java
 public class Sheep implements Animal {
 
@@ -51,13 +57,33 @@ public class Sheep implements Animal {
 }
 ```
 
+Pig
+```java
+public class Pig implements Animal {
+
+    public Pig() {
+        System.out.println("new Pig");
+    }
+
+    public Animal makeCopy() {
+        System.out.println("making a Pig copy");
+        Pig pig = null;
+        try {
+            pig = (Pig) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return pig;
+    }
+
+}
+```
+
 test code
 ```java
-    public void AnimalTest() {
-        Animal sheep = new Sheep();
-        Animal sheepCopy = sheep.makeCopy();
-        assertFalse(sheep.equals(sheepCopy));
-    }
+Animal sheep = new Sheep();
+Animal sheepCopy = sheep.makeCopy();
+assertFalse(sheep.equals(sheepCopy));
 ```
 
 output will like
