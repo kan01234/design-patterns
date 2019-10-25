@@ -4,6 +4,8 @@ Project of eample of singleton pattern implement by Java.
 ## What is singleton pattern
 eliminate the option of instantiating more than one
 
+class diagram:
+
 ![singleton-pattern](https://github.com/kan01234/design-patterns/blob/master/singleton-pattern/singleton-pattern.png/)
 
 - only one instance will be created
