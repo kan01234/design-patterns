@@ -4,6 +4,17 @@ Project of eample of strategy pattern implement by Java.
 ## What is strategy pattern
 Define family of behaviors, encapsulate each of them, make the interchangeable. let the behviors can be changed from clients that use it.
 
+![strategy-pattern](https://github.com/kan01234/design-patterns/blob/master/strategy-pattern/strategy-pattern.png)
+
+1. Strategy
+    - interface that define the strategy method
+
+2. Concrete Strategy
+    - class that implements strategy method
+
+3. Contxt
+    - class that use the Strategy method for action
+
 ## When to use strategy pattern
 - define a class will have one behavior that is similar to other behaviors in a list
 - use the defined behaviors dynamically
@@ -44,6 +55,96 @@ class diagram:
 ![strategy-pattern](https://github.com/kan01234/design-patterns/blob/master/strategy-pattern/%20strategy-pattern.png)
 - Pokemon Trainer is Context
 - ThrowStrategy is encapuslate action and interchangeable
+
+ThrowStrategy interface
+```java
+public interface ThrowStrategy {
+
+    public String throwItem();
+
+}
+```
+
+ThrowRegualr, ThrowGreat, ThrowUltra are concrete strategy
+
+ThrowRegular
+```java
+public class ThrowRegualr implements ThrowStrategy {
+
+    public String throwItem() {
+        return "throw regualr!";
+    }
+
+}
+```
+
+ThrowGreat
+```java
+public class ThrowGreat implements ThrowStrategy {
+
+    public String throwItem() {
+        return "throw great!";
+    }
+
+}
+```
+
+ThrowUltra
+```java
+public class ThrowUltra implements ThrowStrategy {
+
+    public String throwItem() {
+        return "throw ultra!";
+    }
+
+}
+```
+
+testing code
+```java
+beginner = new Beginner();
+expert = new Expert();
+String beginnerStr, expertStr;
+
+// normal pokemon
+System.out.println("see normal Pokemon");
+beginnerStr = beginner.throwItem();
+expertStr = expert.throwItem();
+System.out.println("beginner " + beginnerStr);
+System.out.println("expert " + expertStr);
+
+// special pokemon
+System.out.println("see special Pokemon");
+beginner.setThrowStrategy(new ThrowGreat());
+expert.setThrowStrategy(new ThrowUltra());
+beginnerStr = beginner.throwItem();
+expertStr = expert.throwItem();
+System.out.println("beginner " + beginnerStr);
+System.out.println("expert " + expertStr);
+
+// rare pokemon
+beginner.setThrowStrategy(new ThrowUltra());
+expert.setThrowStrategy(new ThrowUltra());
+beginnerStr = beginner.throwItem();
+expertStr = expert.throwItem();
+System.out.println("beginner " + beginnerStr);
+System.out.println("expert " + expertStr);
+```
+
+output
+```
+see normal Pokemon
+beginner throw regualr!
+expert throw great!
+
+see special Pokemon
+beginner throw great!
+expert throw ultra!
+
+see rare Pokemon
+beginner throw ultra!
+expert throw ultra!
+```
 
 avoid coding like this:
 ```java
