@@ -40,8 +40,6 @@ class diagram:
 - CustomPizzaC need to skip the addMeat step
     - override isVegetarian method to skip
 
-Notes:
-
 ```java
 public abstract class Pizza {
 
@@ -81,6 +79,91 @@ public abstract class Pizza {
     }
 
 }
+```
+
+CustomPizzaA
+```java
+public class CustomPizzaA extends Pizza {
+
+    @Override
+    public void addMeat() {
+        System.out.println("add ham");
+    }
+
+    @Override
+    public void addVegetable() {
+        System.out.println("add onion");
+    }
+
+    @Override
+    public void addSauce() {
+        System.out.println("add tomato sauce");
+    }
+
+    @Override
+    public void addCheese() {
+        System.out.println("add mozzarella cheese");
+    }
+
+}
+```
+
+CustomPizzaB
+```java
+public class CustomPizzaB extends Pizza {
+
+    @Override
+    public void addMeat() {
+        System.out.println("add bacon");
+    }
+
+    @Override
+    public void addVegetable() {
+        System.out.println("add mushrooms");
+    }
+
+    @Override
+    public void addSauce() {
+        System.out.println("add bbq sauce");
+    }
+
+    @Override
+    public void addCheese() {
+        System.out.println("add parmesan cheese");
+    }
+
+}
+```
+
+testing code
+```java
+Pizza pizzaA = new CustomPizzaA();
+System.out.println("make pizza a");
+pizzaA.makePizza();
+Pizza pizzaB = new CustomPizzaB();
+System.out.println("make pizza b");
+pizzaB.makePizza();
+```
+
+output
+```
+make pizza a
+make pizza dough
+add tomato sauce
+add mozzarella cheese
+add ham
+add onion
+bake pizza
+cut pizza
+
+make pizza b
+make pizza dough
+add bbq sauce
+add parmesan cheese
+add bacon
+add mushrooms
+bake pizza
+cut pizza
 ```
 
 1. template method, makePizza() need to be final, avoid override by child class
