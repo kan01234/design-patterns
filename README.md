@@ -51,7 +51,26 @@ Project of eample of design patterns implement by Java.
 [Visitor](https://github.com/kan01234/design-patterns/tree/master/visitor-pattern)
 
 #### TODO
-[x] Command pattern
-[x] review simple factory pattern
-[x] review abstract factory pattern
-[x] review bridge pattern
+- [x] Command pattern
+- [x] review simple factory pattern
+- [x] review abstract factory pattern
+- [x] review bridge pattern
+- [x] review builder pattern
+- [x] review chain of responsibility pattern
+- [x] review command pattern
+- [x] review composite pattern
+- [x] review decorator pattern
+- [x] review facade pattern
+- [x] review flyweight pattern
+- [x] review interpreter pattern
+- [x] review iterator pattern
+- [x] review mediator pattern
+- [x] review memento pattern
+- [x] review observer pattern
+- [x] review prototype pattern
+- [x] review proxy pattern
+- [x] review singleton pattern
+- [x] review state pattern
+- [x] review strategy pattern
+- [x] review template method pattern
+- [x] review visitor pattern
