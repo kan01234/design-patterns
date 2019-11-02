@@ -1,5 +1,5 @@
 # singleton-pattern
-Project of eample of singleton pattern implement by Java.
+Project of example of singleton pattern implement by Java.
 
 ## What is singleton pattern
 eliminate the option of instantiating more than one
