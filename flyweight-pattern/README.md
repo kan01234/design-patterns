@@ -1,5 +1,5 @@
 # flyweight-pattern
-Project of eample of flyweight pattern implement by Java.
+Project of example of flyweight pattern implement by Java.
 
 ## What is flyweight pattern
 minmizes memory usage by sharing as much data as possible with other objects
