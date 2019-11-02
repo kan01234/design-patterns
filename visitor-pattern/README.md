@@ -1,5 +1,5 @@
 # visitor-pattern
-Project of eample of visitor pattern implement by Java.
+Project of example of visitor pattern implement by Java.
 
 ## What is visitor pattern
 - allow to define a new operation without changing the classes of the elements on which it operates
