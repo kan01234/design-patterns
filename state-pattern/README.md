@@ -1,5 +1,5 @@
 # state-pattern
-Project of eample of state pattern implement by Java.
+Project of example of state pattern implement by Java.
 
 ## What is state pattern
 Allows an object to alter its behavior when its internal state changes, The object will appear to change its class.
