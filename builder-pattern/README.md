@@ -1,5 +1,5 @@
 # builder-pattern
-Project of eample of builder pattern implement by Java. 
+Project of example of builder pattern implement by Java. 
 
 ## What is builder pattern
 - used to create complex object
