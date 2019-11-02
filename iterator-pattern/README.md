@@ -1,5 +1,5 @@
 # iterator-pattern
-Project of eample of iterator pattern implement by Java. 
+Project of example of iterator pattern implement by Java. 
 
 ## What is iterator pattern
 provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation
