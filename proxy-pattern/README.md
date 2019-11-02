@@ -1,5 +1,5 @@
 # proxy-pattern
-Project of eample of proxy pattern implement by Java.
+Project of example of proxy pattern implement by Java.
 
 ## What is proxy pattern
 provide a proxy object to control access to real object
