@@ -1,5 +1,5 @@
 # facade-pattern
-Project of eample of facade pattern implement by Java.
+Project of example of facade pattern implement by Java.
 
 ## What is facade pattern
 facade object define a higher-level interface that makes subsystem easier to use
