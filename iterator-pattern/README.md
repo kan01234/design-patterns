@@ -6,7 +6,7 @@ provide a way to access the elements of an aggregate object sequentially without
 
 class diagram:
 
-![iterator pattern](https://github.com/kan01234/designs-patterns/blob/master/iterator-pattern/iterator-pattern.png)
+![iterator pattern](https://github.com/kan01234/design-patterns/blob/master/iterator-pattern/iterator-pattern.png)
 
 1. Aggregate
     - interface for create iterator
