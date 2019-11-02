@@ -1,5 +1,5 @@
 # composite-pattern
-Project of eample of composite pattern implement by Java.
+Project of example of composite pattern implement by Java.
 
 ## What is composite pattern
 - allow to treat individual object and compositions uniformly
