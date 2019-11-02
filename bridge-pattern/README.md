@@ -1,5 +1,5 @@
 # bridge-pattern
-Project of eample of bridge pattern implement by Java. 
+Project of example of bridge pattern implement by Java. 
 
 ## What is bridge pattern
 decouple an abstraction from its implementation so that the two can vary independently
