@@ -1,5 +1,5 @@
 # mediator-pattern
-Project of eample of mediator pattern implement by Java.
+Project of example of mediator pattern implement by Java.
 
 ## What is mediator pattern
 - define object that encapsulates set of interaction bewteen other objects.
