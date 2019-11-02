@@ -1,5 +1,5 @@
 # decorator-pattern
-Project of eample of decorator pattern implement by Java.
+Project of example of decorator pattern implement by Java.
 
 ## What is decorator pattern
 allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
