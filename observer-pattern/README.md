@@ -1,5 +1,5 @@
 # observer-pattern
-Project of eample of observer pattern implement by Java.
+Project of example of observer pattern implement by Java.
 
 ## What is observer pattern
 in observer pattern, Subject will maintains list of observer and notify them when state changed.
