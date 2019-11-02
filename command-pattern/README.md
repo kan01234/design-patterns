@@ -1,5 +1,5 @@
 # command-pattern
-Project of eample of command pattern implement by Java. 
+Project of example of command pattern implement by Java. 
 
 ## What is command pattern
 encapsulate a request as an object
