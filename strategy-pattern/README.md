@@ -1,5 +1,5 @@
 # strategy-pattern
-Project of eample of strategy pattern implement by Java.
+Project of example of strategy pattern implement by Java.
 
 ## What is strategy pattern
 Define family of behaviors, encapsulate each of them, make the interchangeable. let the behviors can be changed from clients that use it.
