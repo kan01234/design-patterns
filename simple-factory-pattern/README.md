@@ -1,5 +1,5 @@
 # simple-factory-pattern
-Project of eample of simple factory pattern implement by Java. 
+Project of example of simple factory pattern implement by Java. 
 
 ## What is simple factory pattern
 creational pattern that uses factory methods to create objects without specify which class object that will be created.
