@@ -1,5 +1,5 @@
 # prototype-pattern
-Project of eample of prototype pattern implement by Java.
+Project of example of prototype pattern implement by Java.
 
 ## What is prototype pattern
 creating new object by clone a object.
