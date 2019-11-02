@@ -1,5 +1,5 @@
 # template-method-pattern
-Project of eample of template method pattern implement by Java.
+Project of example of template method pattern implement by Java.
 
 ## What is template method pattern
 - template method is an method defined in super class, deifning the high-level steps, and it can not be ovrerride
