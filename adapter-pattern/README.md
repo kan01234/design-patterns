@@ -1,5 +1,5 @@
 # adapter-pattern
-Project of eample of adapter pattern implement by Java.
+Project of example of adapter pattern implement by Java.
 
 ## What is adapter pattern
 
