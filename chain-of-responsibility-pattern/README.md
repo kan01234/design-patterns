@@ -1,5 +1,5 @@
 # chain-of-responsibility-pattern
-Project of eample of chain of responsibility pattern implement by Java.
+Project of example of chain of responsibility pattern implement by Java.
 
 ## What is chain of responsibility pattern
 - avoid coupling between sender and handler
