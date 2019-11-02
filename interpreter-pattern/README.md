@@ -1,5 +1,5 @@
 # interpreter-pattern
-Project of eample of interpreter pattern implement by Java.
+Project of example of interpreter pattern implement by Java.
 
 ## What is interpreter pattern
 to evaluate sentences in a language
