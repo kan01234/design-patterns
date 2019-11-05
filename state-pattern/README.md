@@ -32,7 +32,8 @@ possible ways to use auto selling machin shown as below:
 - refund
 
 class diagram:
-![class diagram!](https://github.com/kan01234/design-patterns/blob/master/state-pattern/state-pattern.png)
+
+![class diagram!](https://github.com/kan01234/design-patterns/blob/master/state-pattern/state-pattern-example.png)
 
 MachineState interface
 ```java
